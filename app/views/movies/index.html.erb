@@ -14,20 +14,40 @@
 
         <!-- Modal body -->
         <div class="modal-body">
+          <%= form_for @movie do |f| %>
+            <div class="form-group">
+              <%= f.text_field :name, class: "form-control", placeholder: "Nombre" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_area :description, class: "form-control", placeholder: "Sinopsis" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :image_url, class: "form-control", placeholder: "Poster URL" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :days, class: "form-control", placeholder: "Dias de funcion" %>
+            </div>
+            <%= f.submit "Crear", class: "btn btn-dark btn-lg btn-block" %>
+          <% end %>
         </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm">
       <div class="content">
-
+        <div class="card-group">
+          <% @movies.each do |movie| %>
+          <div class="col-sm-4">
+            <div class="card">
+              <img src="<%= movie.image_url %>" class="img-fluid" alt="Spiderman poster">
+              <div class="card-body">
+                <h3 class="card-title"><%= movie.name %></h3>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
