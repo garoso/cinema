@@ -1,0 +1,28 @@
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    color: #fff;
+}
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+#sidebar ul.components {
+    padding: 20px 0;
+}
+#sidebar a {
+    color: #fff;
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: black;
+    background: #fff;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 1.3em;
+}
